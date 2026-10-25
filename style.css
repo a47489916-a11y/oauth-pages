@@ -109,7 +109,12 @@ code {
   border: 1px solid var(--border-color);
   border-radius: 4px;
   font-size: 0.9em;
-  word-break: break-all;
+  overflow-wrap: anywhere;
+}
+
+/* スコープ名は途中で切らない */
+td:first-child code {
+  white-space: nowrap;
 }
 
 footer {
