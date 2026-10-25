@@ -1,0 +1,126 @@
+/* 共有デザイントークンの最小サブセット（shared/design-kit/tokens/colors.css と同じ値） */
+:root,
+[data-theme="light"] {
+  --color-label: rgb(0, 0, 0);
+  --color-label-secondary: rgb(60, 60, 67);
+  --color-label-tertiary: rgba(60, 60, 67, 0.6);
+  --color-separator: rgba(60, 60, 67, 0.12);
+  --color-link: rgb(0, 136, 255);
+  --color-bg-primary: rgb(255, 255, 255);
+  --color-bg-secondary: rgb(242, 242, 247);
+  --border-color: rgb(199, 199, 204);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-label: rgb(255, 255, 255);
+    --color-label-secondary: rgba(235, 235, 245, 0.6);
+    --color-label-tertiary: rgba(235, 235, 245, 0.3);
+    --color-separator: rgba(84, 84, 88, 0.6);
+    --color-link: rgb(0, 145, 255);
+    --color-bg-primary: rgb(0, 0, 0);
+    --color-bg-secondary: rgb(28, 28, 30);
+    --border-color: rgb(42, 42, 58);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px 64px;
+  background: var(--color-bg-primary);
+  color: var(--color-label);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+    "Noto Sans JP", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 40px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-separator);
+}
+
+.lead {
+  color: var(--color-label-secondary);
+  margin: 0 0 32px;
+}
+
+a {
+  color: var(--color-link);
+}
+
+/* タップ領域を44px以上にする */
+a,
+nav a {
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+p a,
+li a,
+td a {
+  display: inline;
+  min-height: 0;
+  line-height: inherit;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+th,
+td {
+  padding: 12px 8px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-separator);
+}
+
+th {
+  color: var(--color-label-secondary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+code {
+  padding: 2px 6px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9em;
+  word-break: break-all;
+}
+
+footer {
+  margin-top: 56px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-separator);
+  color: var(--color-label-tertiary);
+  font-size: 14px;
+}
+
+.updated {
+  color: var(--color-label-tertiary);
+  font-size: 14px;
+}

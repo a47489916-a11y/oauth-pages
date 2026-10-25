@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThunderBired MCP</title>
+    <meta
+      name="description"
+      content="複数のGmailアカウントを横断して整理するための、個人用ローカルツール"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>ThunderBired MCP</h1>
+      <p class="lead">
+        複数の Gmail アカウントを横断して検索・整理するための、個人用のローカルツールです。
+        作者が自分のメールを扱うために作ったもので、一般配布はしていません。
+      </p>
+
+      <h2>何をするツールか</h2>
+      <p>
+        利用者のパソコンの中で動き、Gmail API 経由で利用者自身の Gmail に接続します。
+        AI アシスタント（Model Context Protocol に対応したクライアント）から、
+        次のような操作ができます。
+      </p>
+      <ul>
+        <li>複数アカウントを横断したメールの検索と閲覧</li>
+        <li>受信トレイの整理（アーカイブ、ラベルの付け替え）</li>
+        <li>返信の下書き作成</li>
+      </ul>
+      <p>
+        メールの<strong>送信機能はありません</strong>。作成できるのは下書きまでで、
+        送信するかどうかは利用者が Gmail の画面で判断します。
+        メールを<strong>完全に削除する機能もありません</strong>。
+      </p>
+
+      <h2>要求する権限と、その理由</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>スコープ</th>
+            <th>理由</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>gmail.readonly</code></td>
+            <td>メールの検索と閲覧。読み取り専用で登録したアカウントに使用します。</td>
+          </tr>
+          <tr>
+            <td><code>gmail.modify</code></td>
+            <td>
+              アーカイブとラベルの付け替え。いずれも元に戻せる操作です。
+              メールの完全削除ができる <code>https://mail.google.com/</code>
+              は意図的に要求していません。
+            </td>
+          </tr>
+          <tr>
+            <td><code>gmail.compose</code></td>
+            <td>
+              返信の下書きの作成。送信用の <code>gmail.send</code>
+              は要求していないため、送信は技術的にできません。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>データの取り扱い</h2>
+      <p>
+        認証情報とアクセストークンは利用者のパソコンの中だけに保存され、
+        作者を含む第三者に送信されることはありません。
+        ただし、利用者が AI アシスタントにメールの要約などを依頼した場合、
+        その処理のためにメールの内容が AI アシスタントの提供元へ送信されます。
+      </p>
+      <p>詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+
+      <h2>お問い合わせ</h2>
+      <p>
+        このページに関するお問い合わせは
+        <a href="https://github.com/a47489916-a11y/oauth-pages/issues">GitHub の Issue</a>
+        からお願いします。
+      </p>
+
+      <footer>
+        <p><a href="privacy.html">プライバシーポリシー</a></p>
+        <p>最終更新: 2026年10月25日</p>
+      </footer>
+    </main>
+  </body>
+</html>

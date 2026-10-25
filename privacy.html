@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>プライバシーポリシー — ThunderBired MCP</title>
+    <meta
+      name="description"
+      content="ThunderBired MCP のプライバシーポリシー。取得する情報、保存場所、Googleユーザーデータの限定使用について。"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>プライバシーポリシー</h1>
+      <p class="lead">ThunderBired MCP（以下「本ツール」）における情報の取り扱いについて。</p>
+      <p class="updated">最終更新: 2026年10月25日</p>
+
+      <h2>1. 本ツールの性質</h2>
+      <p>
+        本ツールは、利用者自身のパソコンの中だけで動作するローカルアプリケーションです。
+        作者が運営するサーバーは存在せず、本ツールが作者にデータを送信することはありません。
+      </p>
+
+      <h2>2. 取得する情報</h2>
+      <p>
+        利用者が許可した Google アカウントについて、Gmail API を通じて次の情報にアクセスします。
+      </p>
+      <ul>
+        <li>メールの件名、差出人、宛先、日時、本文、ラベル</li>
+        <li>アカウントのメールアドレス（どのアカウントの操作かを示すため）</li>
+      </ul>
+      <p>
+        これらは利用者の求めに応じてその場で取得し、本ツールが独自に蓄積・保存することはありません。
+      </p>
+
+      <h2>3. 保存される情報と保存場所</h2>
+      <p>
+        保存されるのは Google の認証情報とアクセストークンのみで、
+        保存先は利用者のパソコン内（Windows の場合
+        <code>%APPDATA%\thunderbired-mcp</code>）です。
+        これらが外部に送信されることはありません。
+      </p>
+
+      <h2>4. AI アシスタントへのデータ送信について</h2>
+      <p>
+        本ツールは、AI アシスタント（Model Context Protocol
+        に対応したクライアント）から利用されることを前提としています。
+        利用者が AI アシスタントにメールの要約・検索・仕分けなどを依頼した場合、
+        <strong>
+          対象となったメールの内容は、その処理のために AI
+          アシスタントの提供元のサーバーへ送信されます。
+        </strong>
+      </p>
+      <p>
+        送信先での取り扱いは、利用者が使用している AI
+        アシスタントの提供元のプライバシーポリシーに従います。
+        本ツールはその送信の仲介をするものであり、送信されたデータを別途保持することはありません。
+      </p>
+
+      <h2>5. 第三者への提供</h2>
+      <p>
+        前項に記載した AI アシスタントの提供元を除き、取得した情報を第三者に提供・販売・共有することはありません。
+        広告目的での利用、与信判断への利用、その他いかなる目的での二次利用も行いません。
+      </p>
+
+      <h2>6. Google ユーザーデータの限定的な使用</h2>
+      <p>
+        本ツールによる Google ユーザーデータの使用および他のアプリへの転送は、
+        <a href="https://developers.google.com/terms/api-services-user-data-policy"
+          >Google API サービスのユーザーデータに関するポリシー</a
+        >（限定的な使用要件を含む）に準拠します。
+      </p>
+
+      <h2>7. 要求する権限</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>スコープ</th>
+            <th>用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>gmail.readonly</code></td>
+            <td>メールの検索と閲覧</td>
+          </tr>
+          <tr>
+            <td><code>gmail.modify</code></td>
+            <td>アーカイブとラベルの付け替え（いずれも取り消し可能）</td>
+          </tr>
+          <tr>
+            <td><code>gmail.compose</code></td>
+            <td>下書きの作成</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        メールの完全削除が可能な <code>https://mail.google.com/</code>、
+        および送信が可能な <code>gmail.send</code> は要求していません。
+      </p>
+
+      <h2>8. アクセスの取り消し</h2>
+      <p>
+        利用者はいつでも
+        <a href="https://myaccount.google.com/permissions"
+          >Google アカウントの権限設定</a
+        >
+        から本ツールのアクセスを取り消せます。取り消すと保存済みのトークンは直ちに無効になります。
+        パソコン内に残ったトークンのファイルは、利用者が削除できます。
+      </p>
+
+      <h2>9. お問い合わせ</h2>
+      <p>
+        <a href="https://github.com/a47489916-a11y/oauth-pages/issues">GitHub の Issue</a>
+        からお願いします。
+      </p>
+
+      <footer>
+        <p><a href="index.html">ThunderBired MCP について</a></p>
+      </footer>
+    </main>
+  </body>
+</html>
